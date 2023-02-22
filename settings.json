@@ -1,0 +1,43 @@
+{
+    "workbench.colorTheme": "Solarized Light",
+    "editor.fontSize": 20,
+    "python.terminal.executeInFileDir": true,
+
+    //Latex
+    "latex-workshop.latex.recipes":[
+        {
+           "name":"xelatex",
+           "tools":[
+              "xelatex"
+           ]
+        },
+        {
+           "name":"xelatex->bibtex->exlatex*2",
+           "tools":[
+              "xelatex",
+              "bibtex",
+              "xelatex",
+              "xelatex"
+           ]
+        }
+    ],
+    "latex-workshop.latex.tools":[
+        {
+           "name":"xelatex",
+           "command":"xelatex",
+           "args":[
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+           ]
+        },
+        {
+           "name":"bibtex",
+           "command":"bibtex",
+           "args":[
+              "%DOCFILE%"
+           ]
+        }
+    ]
+}
