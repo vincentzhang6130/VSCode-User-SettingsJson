@@ -1,43 +1,46 @@
 {
-    "workbench.colorTheme": "Solarized Light",
-    "editor.fontSize": 20,
-    "python.terminal.executeInFileDir": true,
+   "workbench.colorTheme": "Developers Theme - Ocean",
+   "editor.fontSize": 20,
+   "python.terminal.executeInFileDir": true,
 
-    //Latex
-    "latex-workshop.latex.recipes":[
-        {
-           "name":"xelatex",
-           "tools":[
-              "xelatex"
-           ]
-        },
-        {
-           "name":"xelatex->bibtex->exlatex*2",
-           "tools":[
-              "xelatex",
-              "bibtex",
-              "xelatex",
-              "xelatex"
-           ]
-        }
-    ],
-    "latex-workshop.latex.tools":[
-        {
-           "name":"xelatex",
-           "command":"xelatex",
-           "args":[
-              "-synctex=1",
-              "-interaction=nonstopmode",
-              "-file-line-error",
-              "%DOC%"
-           ]
-        },
-        {
-           "name":"bibtex",
-           "command":"bibtex",
-           "args":[
-              "%DOCFILE%"
-           ]
-        }
-    ]
+   //Latex workshop extension 編譯設置
+   "latex-workshop.latex.recipes":[ //自定義編譯配方（從自定義的編譯工具組合出來）
+       {
+          "name":"xelatex", //使用 XeLaTeX 編譯主檔案
+          "tools":[
+             "xelatex"
+          ]
+       },
+       {
+          "name":"xelatex->biber->xelatex*2", //編譯順序： XeLaTeX-> BibLaTeX -> XeLaTeX-> XeLaTeX 
+          "tools":[
+             "xelatex",
+             "biber",
+             "xelatex",
+             "xelatex"
+          ]
+       }
+   ],
+   "latex-workshop.latex.tools":[ //自定義編譯工具
+       {
+          "name":"xelatex",
+          "command":"xelatex",
+          "args":[
+             "-synctex=1",
+             "-interaction=nonstopmode",
+             "-file-line-error",
+             "%DOC%"
+          ]
+       },
+       {
+          "name":"biber",
+          "command":"biber", // BibLaTeX 編譯工具
+          "args":[
+             "%DOCFILE%"
+          ]
+       }
+  ],
+  "workbench.productIconTheme": "developer-icons",
+  "hediet.vscode-drawio.resizeImages": null,
+  "workbench.iconTheme": "developer-icon-theme"
 }
