@@ -1,7 +1,12 @@
 {
    "workbench.colorTheme": "Developers Theme - Ocean",
    "editor.fontSize": 20,
-   "python.terminal.executeInFileDir": true,
+   
+   //Python pep8 編輯環境設定
+   "python.terminal.executeInFileDir": true, // 視情況決定要不要用
+   "python.linting.pycodestyleEnabled": true, // 啟用 pycodestyle 當 linter
+   "editor.formatOnSave": true,
+   "python.formatting.provider": "black" // 啟用 black
 
    //Latex workshop extension 編譯設置
    "latex-workshop.latex.recipes":[ //自定義編譯配方（從自定義的編譯工具組合出來）
